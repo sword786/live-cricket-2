@@ -32,6 +32,28 @@
         player.muted(false); // Unmute explicitly
     });
 </script>
+<video id="liveStream" class="video-js vjs-default-skin" controls autoplay playsinline>
+    <source src="https://your-stream-url.m3u8" type="application/x-mpegURL">
+</video>
+
+<script>
+    var player = videojs('liveStream', {
+        autoplay: true,
+        muted: false, // Ensure it's not muted
+        volume: 1, // Set full volume
+    });
+
+    player.ready(function () {
+        player.volume(1); // Full volume
+        player.muted(false); // Unmute explicitly
+    });
+
+    // Try unmuting after user interaction
+    document.addEventListener("click", function() {
+        player.muted(false);
+        player.volume(1);
+    });
+</script>
 
 </body>
 </html>
