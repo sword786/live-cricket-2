@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Stream</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.14.3/video-js.min.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Live Stream</h1>
+
+    <video id="liveStream" class="video-js vjs-default-skin" controls autoplay width="800" height="450">
+        <source src="https://cdnt20.t20hd.cfd/live/m3-480p.m3u8" type="application/x-mpegURL">
+    </video>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.14.3/video.min.js"></script>
+    <script>
+        var player = videojs('liveStream');
+    </script>
+</body>
+</html>
