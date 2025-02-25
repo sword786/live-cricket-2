@@ -17,5 +17,22 @@
     <script>
         var player = videojs('liveStream');
     </script>
+    <video id="liveStream" class="video-js vjs-default-skin" controls autoplay muted playsinline width="800" height="450">
+    <source src="https://your-stream-url.m3u8" type="application/x-mpegURL">
+</video>
+
+<script>
+    var player = videojs('liveStream', {
+        muted: false, // Ensure it's not muted
+        volume: 1, // Set volume to max
+    });
+
+    player.ready(function () {
+        player.volume(1); // Ensure full volume
+        player.muted(false); // Unmute explicitly
+    });
+</script>
+<video id="liveStream" class="video-js vjs-default-skin" controls autoplay playsinline>
+
 </body>
 </html>
