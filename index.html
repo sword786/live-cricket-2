@@ -8,37 +8,62 @@
 </head>
 <body>
     <h1>Live Stream</h1>
+<div class="tg-banner" onclick="window.location.href='https://t.me/+nh1nYS6yEzoxMWI1';">
 
-    <div class="tg-banner" onclick="window.location.href='https://t.me/+nh1nYS6yEzoxMWI1';">
         <div class="tg-icon">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Logo">
-        </div>
-        Join @live cricket match
-    </div>
 
-    <video id="liveStream" class="video-js vjs-default-skin" controls autoplay playsinline width="800" height="450">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Logo">
+
+        </div>
+
+        Join @live cricket match
+
+    </div>
+    <video id="liveStream" class="video-js vjs-default-skin" controls autoplay width="800" height="450">
         <source src="https://cdnt20.t20hd.cfd/live/m3-480p.m3u8" type="application/x-mpegURL">
     </video>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.14.3/video.min.js"></script>
     <script>
-        var player = videojs('liveStream', {
-            autoplay: true,
-            muted: false, // Ensure it's not muted
-            volume: 1,    // Set full volume
-        });
-
-        player.ready(function () {
-            player.muted(false);  // Explicitly unmute
-            player.volume(1);     // Set max volume
-
-            // Try unmuting after user interaction
-            document.addEventListener("click", function() {
-                player.muted(false);
-                player.volume(1);
-            });
-        });
+        var player = videojs('liveStream');
     </script>
+    <video id="liveStream" class="video-js vjs-default-skin" controls autoplay muted playsinline width="800" height="450">
+    <source src="https://your-stream-url.m3u8" type="application/x-mpegURL">
+</video>
+
+<script>
+    var player = videojs('liveStream', {
+        muted: false, // Ensure it's not muted
+        volume: 1, // Set volume to max
+    });
+
+    player.ready(function () {
+        player.volume(1); // Ensure full volume
+        player.muted(false); // Unmute explicitly
+    });
+</script>
+<video id="liveStream" class="video-js vjs-default-skin" controls autoplay playsinline>
+    <source src="https://your-stream-url.m3u8" type="application/x-mpegURL">
+</video>
+
+<script>
+    var player = videojs('liveStream', {
+        autoplay: true,
+        muted: false, // Ensure it's not muted
+        volume: 1, // Set full volume
+    });
+
+    player.ready(function () {
+        player.volume(1); // Full volume
+        player.muted(false); // Unmute explicitly
+    });
+
+    // Try unmuting after user interaction
+    document.addEventListener("click", function() {
+        player.muted(false);
+        player.volume(1);
+    });
+</script>
 
 </body>
 </html>
